@@ -1,15 +1,29 @@
-# Animatio Text
+# Animatio
 
-A React component package for creating animated and sequential text effects using `anime.js`. Customize your text animation effortlessly with customizable classNames for styling.
+A React component package for creating text effects and images. Customize your text animation effortlessly with customizable classNames for styling.
 
 ## Installation
 
 To install the package, run the following command in your Next.js or React project:
 
+### 1.Step
+
 ```bash
-npm install animatio-text@latest
+    npm i animatio@latest
+```
+### 2.Step
+
+```bash
+   npx animatio init
 ```
 
+### 3.Step
+
+```bash
+   npx animatio add < animation name >
+   #Example 
+   npx animatio add SequentialText
+```
 ## Components
 
 ### 1. SequentialText
@@ -17,19 +31,21 @@ npm install animatio-text@latest
 The `SequentialText` component animates words sequentially, where each letter is animated as it appears on the screen.
 
 #### Usage
+```bash
+   npx animatio add SequentialText
+```
+### Example 
 
 ```tsx
-import { SequentialText } from 'animatio-text';
 
-const ExampleComponent = () => {
-  return (
-    <SequentialText
+import SequentialText from "@/components/animatios/SequentialText";
+
+<SequentialText
       text={['Hello', 'World', 'Welcome to Animatio!']}
       speed={0.8} // Optional: Controls animation speed (default is 0.8)
       className="text-blue-500 text-4xl bg-yellow-200 p-2" // Optional: Apply custom styles
     />
-  );
-};
+  
 ```
 
 #### Props
@@ -47,30 +63,31 @@ const ExampleComponent = () => {
 The `AnimatedText` component animates words by scaling and fading in each letter, one after another.
 
 #### Usage
+```bash
+   npx animatio add AnimatedText
+```
+### Example 
 
 ```tsx
-import { AnimatedText } from 'animatio-text';
+   import AnimatedText from "@/components/animatios/AnimatedText";
 
-const ExampleComponent = () => {
-  return (
     <AnimatedText
       text={['React', 'Animation', 'Made Simple']}
       speed={0.6} // Optional: Controls animation speed (default is 0.6)
       className="text-red-500 text-3xl" // Optional: Apply custom styles
     />
-  );
-};
+
 ```
 
 #### Props
 
 - `text` (required): An array of strings representing the words to animate.
-- `speed` (optional): A number controlling the animation speed (default: `1`).
+- `speed` (optional): A number controlling the animation speed (default: `0.6`).
 - `className` (optional): Custom CSS classes to style the animated text.
 
 #### Default Speed
 
-- The default speed for the `AnimatedText` component is `1`.
+- The default speed for the `AnimatedText` component is `0.6`.
 
 ## Customization
 
@@ -91,12 +108,6 @@ This package is licensed under the MIT License. Feel free to use and modify it i
 
 ---
 
-Enjoy creating amazing animations with `animatio-text`!
+Enjoy creating amazing animations with `animatio`!
 
-
-### Summary of Changes:
-- **Installation**: Includes `npm install animatio-text@latest` for easy installation.
-- **Usage Examples**: Provides examples for both `SequentialText` and `AnimatedText`, showing how to pass text, speed, and custom classes.
-- **Props Documentation**: Clearly lists the props, including default values for `speed`.
-- **Customization**: Explains how to customize text styles using `className`.
 - **Connect on linkedin**: https://www.linkedin.com/in/ahkamboh/
