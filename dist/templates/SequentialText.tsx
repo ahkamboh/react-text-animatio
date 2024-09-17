@@ -1,13 +1,14 @@
+// @animatio: https://github.com/ahkamboh/animatio
 "use client";
 import React, { useEffect, useState, useRef } from "react";
+ {/* @ts-ignore */}
 import anime from "animejs";
 
 interface SequentialTextProps {
   text: string[];
   speed?: number;
-  className?: string; // Optional className prop for customization
+  className?: string; 
 }
-
 const SequentialText: React.FC<SequentialTextProps> = ({
   text,
   speed = 1,
@@ -20,13 +21,11 @@ const SequentialText: React.FC<SequentialTextProps> = ({
     if (textWrapperRef.current && text.length > 0) {
       const textWrapper = textWrapperRef.current;
 
-      // Apply the className to each individual letter
       textWrapper.innerHTML = text[currentWordIndex].replace(
         /\S/g,
         `<span class='inline-block leading-none letter ${className}'>$&</span>`
       );
 
-      // Animate letters
       anime.timeline({ loop: false })
         .add({
           targets: '.letter',
@@ -39,7 +38,6 @@ const SequentialText: React.FC<SequentialTextProps> = ({
           opacity: 1,
           duration: 0,
           complete: () => {
-            // Update to the next word after the animation completes
             setTimeout(() => {
               setCurrentWordIndex((prevIndex) => (prevIndex + 1) % text.length);
             }, 1000);
@@ -61,3 +59,9 @@ const SequentialText: React.FC<SequentialTextProps> = ({
 };
 
 export default SequentialText;
+
+/*creator:@ahkamboh(Ali Hamza Kamboh)
+Site : https://alihamzakamboh.com
+Twitter: https://twitter.com/alihamzakambohh
+GitHub: https://github.com/ahkamboh
+LinkedIn: https://www.linkedin.com/in/ahkamboh/*/
