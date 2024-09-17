@@ -1,7 +1,6 @@
 // @animatio: https://github.com/ahkamboh/animatio
 "use client";
 import React, { useEffect, useState, useRef } from "react";
- {/* @ts-ignore */}
 import anime from "animejs";
 
 interface SequentialTextProps {

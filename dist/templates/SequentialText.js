@@ -29,7 +29,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(require("react"));
-{ /* @ts-ignore */ }
 const animejs_1 = __importDefault(require("animejs"));
 const SequentialText = ({ text, speed = 1, className = '', }) => {
     const [currentWordIndex, setCurrentWordIndex] = (0, react_1.useState)(0);

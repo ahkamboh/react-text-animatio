@@ -51,7 +51,7 @@ import SequentialText from "@/components/animatios/SequentialText";
 #### Props
 
 - `text` (required): An array of strings representing the words to animate sequentially.
-- `speed` (optional): A number controlling the animation speed (default: `0.8`).
+- `speed` (required): A number controlling the animation speed (default: `0.8`).
 - `className` (optional): Custom CSS classes to style the animated text.
 
 #### Default Speed
@@ -82,7 +82,7 @@ The `AnimatedText` component animates words by scaling and fading in each letter
 #### Props
 
 - `text` (required): An array of strings representing the words to animate.
-- `speed` (optional): A number controlling the animation speed (default: `0.6`).
+- `speed` (required): A number controlling the animation speed (default: `0.6`).
 - `className` (optional): Custom CSS classes to style the animated text.
 
 #### Default Speed
@@ -97,7 +97,8 @@ For example:
 
 ```tsx
 <AnimatedText
-  text={['Customizable', 'Text']}
+  text={['Customizable', 'Text','Ali Hamza']}
+  speed={0.6}
   className="text-green-500 bg-gray-200 p-4 rounded-lg" // Custom styles
 />
 ```
