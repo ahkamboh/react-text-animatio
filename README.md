@@ -42,7 +42,7 @@ import SequentialText from "@/components/animatios/SequentialText";
 
 <SequentialText
       text={['Hello', 'World', 'Welcome to Animatio!']}
-      speed={0.8} // Optional: Controls animation speed (default is 0.8)
+      speed={0.8} // Required: Controls animation speed (default is 0.8)
       className="text-blue-500 text-4xl bg-yellow-200 p-2" // Optional: Apply custom styles
     />
   
@@ -72,8 +72,8 @@ The `AnimatedText` component animates words by scaling and fading in each letter
    import AnimatedText from "@/components/animatios/AnimatedText";
 
     <AnimatedText
-      text={['React', 'Animation', 'Made Simple']}
-      speed={0.6} // Optional: Controls animation speed (default is 0.6)
+      text={['React', 'Animation', 'Made Simple']} 
+      speed={0.6} // Required : Controls animation speed (default is 0.6)
       className="text-red-500 text-3xl" // Optional: Apply custom styles
     />
 
