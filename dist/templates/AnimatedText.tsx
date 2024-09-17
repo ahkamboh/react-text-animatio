@@ -1,11 +1,14 @@
+// @animatio: https://github.com/ahkamboh/animatio
+
 "use client";
 import React, { useEffect, useState, useRef } from "react";
+ {/* @ts-ignore */}
 import anime from "animejs";
 
 interface AnimatedTextProps {
   text: string[];
   speed?: number;
-  className?: string; // Optional className prop for customization
+  className?: string;
 }
 
 const AnimatedText: React.FC<AnimatedTextProps> = ({ text, speed = 0.8, className = '' }) => {
@@ -15,13 +18,10 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, speed = 0.8, classNam
   useEffect(() => {
     const animateText = () => {
       if (textRef.current) {
-        // Apply the className to each individual character
         textRef.current.innerHTML = text[currentWordIndex].replace(
           /\S/g,
           `<span class='inline-block ${className}'>$&</span>`
         );
-
-        // Anime.js animation
         anime.timeline({ loop: false })
           .add({
             targets: `.animated-text .inline-block`,
@@ -56,3 +56,9 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, speed = 0.8, classNam
 };
 
 export default AnimatedText;
+
+/*creator:@ahkamboh(Ali Hamza Kamboh)
+Site : https://alihamzakamboh.com
+Twitter: https://twitter.com/alihamzakambohh
+GitHub: https://github.com/ahkamboh
+LinkedIn: https://www.linkedin.com/in/ahkamboh/*/

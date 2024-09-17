@@ -1,6 +1,6 @@
 {
   "name": "animatio",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A React component package for creating text effects and images. Customize your text animation effortlessly.",
   "main": "dist/cli.js",
   "bin": {

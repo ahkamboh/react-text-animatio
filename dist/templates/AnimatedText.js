@@ -1,5 +1,7 @@
 "use strict";
+// @animatio: https://github.com/ahkamboh/animatio
 "use client";
+// @animatio: https://github.com/ahkamboh/animatio
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -28,6 +30,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(require("react"));
+{ /* @ts-ignore */ }
 const animejs_1 = __importDefault(require("animejs"));
 const AnimatedText = ({ text, speed = 0.8, className = '' }) => {
     const [currentWordIndex, setCurrentWordIndex] = (0, react_1.useState)(0);
@@ -35,9 +38,7 @@ const AnimatedText = ({ text, speed = 0.8, className = '' }) => {
     (0, react_1.useEffect)(() => {
         const animateText = () => {
             if (textRef.current) {
-                // Apply the className to each individual character
                 textRef.current.innerHTML = text[currentWordIndex].replace(/\S/g, `<span class='inline-block ${className}'>$&</span>`);
-                // Anime.js animation
                 animejs_1.default.timeline({ loop: false })
                     .add({
                     targets: `.animated-text .inline-block`,
@@ -66,3 +67,8 @@ const AnimatedText = ({ text, speed = 0.8, className = '' }) => {
         react_1.default.createElement("span", { ref: textRef, className: "animated-text" })));
 };
 exports.default = AnimatedText;
+/*creator:@ahkamboh(Ali Hamza Kamboh)
+Site : https://alihamzakamboh.com
+Twitter: https://twitter.com/alihamzakambohh
+GitHub: https://github.com/ahkamboh
+LinkedIn: https://www.linkedin.com/in/ahkamboh/*/ 

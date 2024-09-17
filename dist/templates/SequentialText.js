@@ -1,4 +1,5 @@
 "use strict";
+// @animatio: https://github.com/ahkamboh/animatio
 "use client";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -28,6 +29,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(require("react"));
+{ /* @ts-ignore */ }
 const animejs_1 = __importDefault(require("animejs"));
 const SequentialText = ({ text, speed = 1, className = '', }) => {
     const [currentWordIndex, setCurrentWordIndex] = (0, react_1.useState)(0);
@@ -35,9 +37,7 @@ const SequentialText = ({ text, speed = 1, className = '', }) => {
     (0, react_1.useEffect)(() => {
         if (textWrapperRef.current && text.length > 0) {
             const textWrapper = textWrapperRef.current;
-            // Apply the className to each individual letter
             textWrapper.innerHTML = text[currentWordIndex].replace(/\S/g, `<span class='inline-block leading-none letter ${className}'>$&</span>`);
-            // Animate letters
             animejs_1.default.timeline({ loop: false })
                 .add({
                 targets: '.letter',
@@ -50,7 +50,6 @@ const SequentialText = ({ text, speed = 1, className = '', }) => {
                 opacity: 1,
                 duration: 0,
                 complete: () => {
-                    // Update to the next word after the animation completes
                     setTimeout(() => {
                         setCurrentWordIndex((prevIndex) => (prevIndex + 1) % text.length);
                     }, 1000);
@@ -63,3 +62,8 @@ const SequentialText = ({ text, speed = 1, className = '', }) => {
             react_1.default.createElement("span", { className: "letters" }, text[currentWordIndex]))));
 };
 exports.default = SequentialText;
+/*creator:@ahkamboh(Ali Hamza Kamboh)
+Site : https://alihamzakamboh.com
+Twitter: https://twitter.com/alihamzakambohh
+GitHub: https://github.com/ahkamboh
+LinkedIn: https://www.linkedin.com/in/ahkamboh/*/ 
