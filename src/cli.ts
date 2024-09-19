@@ -5,8 +5,8 @@ import { program } from 'commander';
 
 // Define the CLI tool version and description
 program
-  .version('1.0.0')
-  .description('Animatio: CLI to add animations to your project');
+  .version('1.1.0')
+  .description('Animatio: A React component package for creating dynamic text effects');
 
 // Command to initialize the animations folder
 program
@@ -16,7 +16,6 @@ program
     const componentsDir = path.join(process.cwd(), 'src', 'components');
     const animationsDir = path.join(componentsDir, 'animatios');
 
-    // Create src/components and animations directories if they don't exist
     if (!fs.existsSync(componentsDir)) {
       fs.mkdirSync(componentsDir, { recursive: true });
     }
@@ -29,6 +28,21 @@ program
     }
   });
 
+// List of available animations
+const availableAnimations = [
+  'CaptureText',
+  'DanceDualText',
+  'DanceText',
+  'FlowingText',
+  'GlideText',
+  'LetterPopText',
+  'SurgeText',
+  'SwapText',
+  'SwingText',
+  'TwinkleText',
+  'WordPopText'
+];
+
 // Command to add a new animation component
 program
   .command('add <animationName>')
@@ -37,38 +51,25 @@ program
     const animationsDir = path.join(process.cwd(), 'src', 'components', 'animatios');
     const animationFile = path.join(animationsDir, `${animationName}.tsx`);
 
-    // Check if the animations folder exists
     if (!fs.existsSync(animationsDir)) {
       console.log('Animatios folder not found. Run "npx animatio init" first.');
       return;
     }
 
-    let templatePath: string;
-
-    // Handle predefined animations or display an error if not found
-    switch (animationName.toLowerCase()) {
-      case 'animatedtext':
-        templatePath = path.join(__dirname, 'templates', 'AnimatedText.tsx'); // Ensure template path is correct
-        break;
-      case 'sequentialtext':
-        templatePath = path.join(__dirname, 'templates', 'SequentialText.tsx'); // Add sequentialtext case
-        break;
-      default:
-        console.log(`Error: No predefined animation found for "${animationName}". Available animations: AnimatedText, SequentialText`);
-        return;
+    if (!availableAnimations.includes(animationName)) {
+      console.log(`Error: No predefined animation found for "${animationName}".`);
+      console.log('Available animations:', availableAnimations.join(', '));
+      return;
     }
 
-    // Verify if the template exists
+    const templatePath = path.join(__dirname, 'templates', `${animationName}.tsx`);
+
     if (!fs.existsSync(templatePath)) {
       console.log(`Error: Template for "${animationName}" not found at ${templatePath}`);
       return;
-    } else {
-      console.log(`Template found at ${templatePath}`);
     }
 
-    // Read the template file and create the animation component in the animations folder
-    const animationCode = fs.readFileSync(templatePath, 'utf8')
-      .replace(/CustomAnimation/g, animationName); // Replace placeholder with the actual animation name
+    const animationCode = fs.readFileSync(templatePath, 'utf8');
 
     fs.writeFileSync(animationFile, animationCode);
     console.log(`${animationName} component added to src/components/animatios`);
@@ -80,10 +81,9 @@ program
   .description('List available predefined animations')
   .action(() => {
     console.log('Available predefined animations:');
-    console.log('- AnimatedText');
-    console.log('- SequentialText');
+    availableAnimations.forEach(animation => console.log(`- ${animation}`));
     console.log('\nTo add a predefined animation, use:');
-    console.log('npx animatio add animationName');
+    console.log('npx animatio add <animationName>');
   });
 
 // Parse and execute the commands

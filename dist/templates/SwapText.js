@@ -30,39 +30,43 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(require("react"));
 const animejs_1 = __importDefault(require("animejs"));
-const SequentialText = ({ text, speed = 1, className = '', }) => {
-    const [currentWordIndex, setCurrentWordIndex] = (0, react_1.useState)(0);
-    const textWrapperRef = (0, react_1.useRef)(null);
+const SwapText = ({ text, speed = 1, className = '' }) => {
+    const textRef = (0, react_1.useRef)(null);
     (0, react_1.useEffect)(() => {
-        if (textWrapperRef.current && text.length > 0) {
-            const textWrapper = textWrapperRef.current;
-            textWrapper.innerHTML = text[currentWordIndex].replace(/\S/g, `<span class='inline-block leading-none letter ${className}'>$&</span>`);
-            animejs_1.default.timeline({ loop: false })
-                .add({
-                targets: '.letter',
-                translateY: ["1.1em", 0],
-                translateZ: 0,
-                duration: 750 / speed,
-                delay: (el, i) => 50 * i
-            }).add({
-                targets: textWrapper,
-                opacity: 1,
-                duration: 0,
-                complete: () => {
-                    setTimeout(() => {
-                        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % text.length);
-                    }, 1000);
-                }
-            });
+        if (textRef.current) {
+            const textWrapper = textRef.current;
+            let currentTextIndex = 0;
+            const animateText = () => {
+                textWrapper.innerHTML = text[currentTextIndex].replace(/\S/g, "<span class='letter2'>$&</span>");
+                animejs_1.default.timeline({ loop: false })
+                    .add({
+                    targets: '.letter2',
+                    translateY: ["1.1em", 0],
+                    translateZ: 0,
+                    opacity: [0, 1],
+                    easing: 'easeInOutQuad',
+                    duration: 750 / speed,
+                    delay: (el, i) => 50 * i
+                }).add({
+                    targets: '.letter2',
+                    opacity: 0,
+                    duration: 1500 / speed,
+                    easing: 'easeInOutQuad',
+                    delay: (el, i) => 50 * i + 1000
+                });
+                currentTextIndex = (currentTextIndex + 1) % text.length;
+            };
+            animateText();
+            const interval = setInterval(animateText, 4000 / speed);
+            return () => clearInterval(interval);
         }
-    }, [currentWordIndex, text, speed, className]);
-    return (react_1.default.createElement("h1", { className: `relative font-black text-5xl ${className}` },
-        react_1.default.createElement("span", { className: "relative inline-block pt-1 pr-0.5 pb-1 overflow-hidden", ref: textWrapperRef },
-            react_1.default.createElement("span", { className: "letters" }, text[currentWordIndex]))));
+    }, [text, speed]);
+    return (react_1.default.createElement("div", { ref: textRef, className: `${className}` }));
 };
-exports.default = SequentialText;
+exports.default = SwapText;
 /*creator:@ahkamboh(Ali Hamza Kamboh)
 Site : https://alihamzakamboh.com
 Twitter: https://twitter.com/alihamzakambohh
 GitHub: https://github.com/ahkamboh
-LinkedIn: https://www.linkedin.com/in/ahkamboh/*/ 
+LinkedIn: https://www.linkedin.com/in/ahkamboh/*/
+//# sourceMappingURL=SwapText.js.map

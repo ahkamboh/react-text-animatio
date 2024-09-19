@@ -8,8 +8,12 @@
     "strict": true,
     "esModuleInterop": true,
     "jsx": "react",
-    "typeRoots": ["./node_modules/@types", "./src/types"]
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": ["node_modules", "**/*.spec.ts", "dist"]
 }
