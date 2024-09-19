@@ -5,7 +5,7 @@ import { program } from 'commander';
 
 // Define the CLI tool version and description
 program
-  .version('1.1.0')
+  .version('1.1.1')
   .description('Animatio: A React component package for creating dynamic text effects');
 
 // Command to initialize the animations folder
