@@ -74,7 +74,7 @@ const GlideText: React.FC<GlideTextProps> = ({ text, speed = 1, direction = "ver
   }, [currentIndex, text, speed, direction]);
 
   return (
-    <h1 className={`font-black relative overflow-hidden`}>
+    <h1 className={`font-black  text-4xl  relative overflow-hidden`}>
       <span ref={textRef} className={`inline-block ${className}`}>
         {text[currentIndex]}
       </span>

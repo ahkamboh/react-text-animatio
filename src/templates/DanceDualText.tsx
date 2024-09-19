@@ -65,7 +65,7 @@ const DanceDualText: React.FC<DanceDualTextProps> = ({ text, className = '', spe
   }, [text, currentIndex, speed, direction]);
 
   return (
-    <div className={`overflow-hidden ${className}`}>
+    <div className={` font-black text-4xl  overflow-hidden ${className}`}>
       <div ref={textRef} className="inline-block" />
     </div>
   );

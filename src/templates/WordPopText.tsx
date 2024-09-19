@@ -1,65 +1,50 @@
-// @animatio: https://github.com/ahkamboh/animatio
-"use client"
-import React, { useEffect, useRef } from "react";
+"use client";
+import React, { useEffect, useState, useRef } from "react";
 import anime from "animejs";
 
 interface WordPopTextProps {
   text: string[];
-  className?: string;
   speed?: number;
+  className?: string;
 }
 
-  const WordPopText: React.FC<WordPopTextProps> = ({text, className = '' , speed=1}) => {
-  const textRef = useRef<HTMLDivElement>(null);
+const WordPopText: React.FC<WordPopTextProps> = ({ text, speed = 0.8, className = '' }) => {
+  const [currentWordIndex, setCurrentIndex] = useState(0);
+  const textRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const animationConfig = {
-      opacityIn: [0, 1],
-      scaleIn: [0.2, 1],
-      scaleOut: 3,
-      durationIn: 800/speed,
-      durationOut: 600/speed,
-      delay: 500
+    const animateText = () => {
+      if (textRef.current) {
+        textRef.current.innerHTML = text[currentWordIndex].split(' ').map(word => `<span class='inline-block'>${word}</span>`).join(' ');
+        anime.timeline({ loop: false })
+          .add({
+            targets: `.animated-text-20 .inline-block`,
+            opacity: [0, 1],
+            scale: [0.2, 1],
+            duration: 800 / speed,
+          })
+          .add({
+            targets: `.animated-text-20 .inline-block`,
+            opacity: 0,
+            scale: 3,
+            easing: "easeInExpo",
+            duration: 600 / speed,
+            delay: 500 / speed
+          });
+      }
     };
 
-    const timeline = anime.timeline({ loop: true });
+    animateText();
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % text.length);
+    }, 2050 / speed);
 
-    text.forEach((phrase, index) => {
-      const wordClass = `word-${index + 1}`;
-      
-      timeline
-        .add({
-          targets: `.${wordClass}`,
-          opacity: animationConfig.opacityIn,
-          scale: animationConfig.scaleIn,
-          duration: animationConfig.durationIn
-        })
-        .add({
-          targets: `.${wordClass}`,
-          opacity: 0,
-          scale: animationConfig.scaleOut,
-          duration: animationConfig.durationOut,
-          easing: "easeInExpo",
-          delay: animationConfig.delay
-        });
-    });
-
-    return () => {
-      timeline.pause();
-    };
-  }, [text]);
+    return () => clearInterval(interval);
+  }, [currentWordIndex, text, speed, className]);
 
   return (
-    <h1 className={`font-black text-5xl ${className} relative`}>
-      <div ref={textRef} className="ml4 relative">
-        {text.map((phrase, index) => (
-          <span key={index} className={`word-${index + 1} absolute`}>
-            {phrase.split(' ').map((word, wordIndex) => (
-              <span key={wordIndex} className="inline-block mr-2">{word}</span>
-            ))}
-          </span>
-        ))}
-      </div>
+    <h1 className={`font-black text-4xl ${className} pb-1`}>
+      <span ref={textRef} className="animated-text-20"></span>
     </h1>
   );
 };

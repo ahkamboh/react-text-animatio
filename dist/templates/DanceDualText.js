@@ -78,7 +78,7 @@ const DanceDualText = ({ text, className = '', speed = 0.7, direction = 'none' }
         }, 3000 / speed);
         return () => clearInterval(interval);
     }, [text, currentIndex, speed, direction]);
-    return (react_1.default.createElement("div", { className: `overflow-hidden ${className}` },
+    return (react_1.default.createElement("div", { className: ` font-black text-4xl  overflow-hidden ${className}` },
         react_1.default.createElement("div", { ref: textRef, className: "inline-block" })));
 };
 exports.default = DanceDualText;

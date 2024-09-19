@@ -3,13 +3,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import anime from "animejs";
 
-interface FlowingTextProps {
+interface SlitTextProps {
   text: string[];
   className?: string;
   speed?: number; 
 }
 
-const FlowingText: React.FC<FlowingTextProps> = ({ text, className = '', speed = 0.8 }) => {
+const SlitText: React.FC<SlitTextProps> = ({ text, className = '', speed = 0.7 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const textRefs = useRef<HTMLSpanElement>(null);
 
@@ -56,17 +56,17 @@ const FlowingText: React.FC<FlowingTextProps> = ({ text, className = '', speed =
     return () => clearInterval(interval);
   }, [currentIndex, text, speed]);
   return (
-    <h1 className={`font-black text-4xl  ${className}`}>
-      <span ref={textRefs} className="inline-block ">
+    <h1 className={` font-black text-4xl  ${className}`}>
+      <span ref={textRefs} >
         {text[currentIndex].split('').map((char, index) => (
-          <span key={index} className="inline-block ">{char}</span>
+          <span key={index} >{char}</span>
         ))}
       </span>
     </h1>
   );
 };
 
-export default FlowingText;
+export default SlitText;
 
 /*creator:@ahkamboh(Ali Hamza Kamboh)
 Site : https://alihamzakamboh.com

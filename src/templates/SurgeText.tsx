@@ -51,7 +51,7 @@ const SurgeText: React.FC<SurgeTextProps> = ({ text, speed = 0.8, className = ''
   }, [currentWordIndex, text, speed, className]);
 
   return (
-    <h1 className={`font-black text-5xl ${className} overflow-hidden`}>
+    <h1 className={`font-black text-4xl ${className} overflow-hidden pb-1`}>
       <span ref={textRef} className="animated-text-2"></span>
     </h1>
   );

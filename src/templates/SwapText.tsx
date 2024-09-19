@@ -42,7 +42,7 @@ const SwapText: React.FC<SwapTextProps> = ({ text, speed = 1, className = '' }) 
   }, [text, speed]);
 
   return (
-    <div ref={textRef} className={`${className}`}></div>
+    <div ref={textRef} className={` font-black text-4xl  ${className}`}></div>
   );
 };
 

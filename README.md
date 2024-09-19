@@ -100,7 +100,7 @@ import DanceText from "@/components/animatios/DanceText";
 
 <DanceText
   text={['Creative', 'Animations']}
-  speed={0.4}
+  speed={0.5}
   direction="bottom"
   className="text-green-500"
 />
@@ -108,7 +108,7 @@ import DanceText from "@/components/animatios/DanceText";
 
 - **Props**:
   - `text` (required): Array of strings.
-  - `speed` (optional): Animation speed (default: `0.4`).
+  - `speed` (optional): Animation speed (default: `0.5`).
   - `direction` (optional): `'top'` or `'bottom'`.
 
 ### 4. **FlowingText**
@@ -328,6 +328,33 @@ import WordPopText from "@/components/animatios/WordPopText";
 - **Props**:
   - `text` (required): Array of strings.
   - `speed` (optional): Animation speed (default: `1`).
+  - `className` (optional): Custom styles.
+
+### 12. **SlitText**
+
+SlitText in each word .
+
+#### Usage
+
+```bash
+npx animatio add SlitText
+```
+
+#### Example
+
+```tsx
+import SlitText from "@/components/animatios/SlitText";
+
+<SlitText
+  text={['Slit', 'Words']}
+  speed={0.7}
+  className="text-gray-600"
+/>
+```
+
+- **Props**:
+  - `text` (required): Array of strings.
+  - `speed` (optional): Animation speed (default: `0.7`).
   - `className` (optional): Custom styles.
 
 ## Customization

@@ -63,7 +63,7 @@ const SurgeText = ({ text, speed = 0.8, className = '' }) => {
         }, 2750 / speed);
         return () => clearInterval(interval);
     }, [currentWordIndex, text, speed, className]);
-    return (react_1.default.createElement("h1", { className: `font-black text-5xl ${className} overflow-hidden` },
+    return (react_1.default.createElement("h1", { className: `font-black text-4xl ${className} overflow-hidden pb-1` },
         react_1.default.createElement("span", { ref: textRef, className: "animated-text-2" })));
 };
 exports.default = SurgeText;

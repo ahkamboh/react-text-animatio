@@ -62,7 +62,7 @@ const CaptureText = ({ text, speed = 0.7, className = '' }) => {
         }, 2750 / speed);
         return () => clearInterval(interval);
     }, [currentWordIndex, text, speed, className]);
-    return (react_1.default.createElement("h1", { className: `font-black text-5xl ${className}` },
+    return (react_1.default.createElement("h1", { className: `font-black text-4xl ${className}` },
         react_1.default.createElement("span", { ref: textRef, className: "animated-text" })));
 };
 exports.default = CaptureText;

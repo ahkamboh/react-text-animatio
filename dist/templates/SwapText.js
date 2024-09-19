@@ -61,7 +61,7 @@ const SwapText = ({ text, speed = 1, className = '' }) => {
             return () => clearInterval(interval);
         }
     }, [text, speed]);
-    return (react_1.default.createElement("div", { ref: textRef, className: `${className}` }));
+    return (react_1.default.createElement("div", { ref: textRef, className: ` font-black text-4xl  ${className}` }));
 };
 exports.default = SwapText;
 /*creator:@ahkamboh(Ali Hamza Kamboh)
