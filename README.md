@@ -1,107 +1,338 @@
 # Animatio
 
-A React component package for creating text effects and images. Customize your text animation effortlessly with customizable classNames for styling.
+A React component package for creating dynamic text effects. Effortlessly customize your text animations with configurable classNames for styling and control.
 
 ## Installation
 
-To install the package, run the following command in your Next.js or React project:
+To install the package in your Next.js or React project, follow these steps:
 
-### 1.Step
-
-```bash
-    npm i animatio@latest
-```
-### 2.Step
+### 1. Install the package
 
 ```bash
-   npx animatio init
+npm i animatio@latest
 ```
 
-### 3.Step
+### 2. Initialize the package
 
 ```bash
-   npx animatio add < animation name >
-   #Example 
-   npx animatio add SequentialText
+npx animatio init
 ```
+
+### 3. Add an animation
+
+```bash
+npx animatio add <animation name>
+# Example
+npx animatio add CaptureText
+```
+
 ## Components
 
-### 1. SequentialText
+### 1. **CaptureText**
 
-The `SequentialText` component animates words sequentially, where each letter is animated as it appears on the screen.
-
-#### Usage
-```bash
-   npx animatio add SequentialText
-```
-### Example 
-
-```tsx
-
-import SequentialText from "@/components/animatios/SequentialText";
-
-<SequentialText
-      text={['Hello', 'World', 'Welcome to Animatio!']}
-      speed={0.8} // Required: Controls animation speed (default is 0.8)
-      className="text-blue-500 text-4xl bg-yellow-200 p-2" // Optional: Apply custom styles
-    />
-  
-```
-
-#### Props
-
-- `text` (required): An array of strings representing the words to animate sequentially.
-- `speed` (required): A number controlling the animation speed (default: `0.8`).
-- `className` (optional): Custom CSS classes to style the animated text.
-
-#### Default Speed
-
-- The default speed for the `SequentialText` component is `0.8`.
-
-### 2. AnimatedText
-
-The `AnimatedText` component animates words by scaling and fading in each letter, one after another.
+Animates each letter as it appears on the screen with a pop effect.
 
 #### Usage
+
 ```bash
-   npx animatio add AnimatedText
+npx animatio add CaptureText
 ```
-### Example 
+
+#### Example
 
 ```tsx
-   import AnimatedText from "@/components/animatios/AnimatedText";
+import CaptureText from "@/components/animatios/CaptureText";
 
-    <AnimatedText
-      text={['React', 'Animation', 'Made Simple']} 
-      speed={0.6} // Required : Controls animation speed (default is 0.6)
-      className="text-red-500 text-3xl" // Optional: Apply custom styles
-    />
-
+<CaptureText
+  text={['Hello', 'World']}
+  speed={0.7}
+  className="text-blue-500"
+/>
 ```
 
-#### Props
+- **Props**:
+  - `text` (required): Array of strings.
+  - `speed` (optional): Animation speed (default: `0.7`).
+  - `className` (optional): Custom CSS class names.
 
-- `text` (required): An array of strings representing the words to animate.
-- `speed` (required): A number controlling the animation speed (default: `0.6`).
-- `className` (optional): Custom CSS classes to style the animated text.
+### 2. **DanceDualText**
 
-#### Default Speed
+Creates a dance-like animation where letters move in from different directions.
 
-- The default speed for the `AnimatedText` component is `0.6`.
+#### Usage
+
+```bash
+npx animatio add DanceDualText
+```
+
+#### Example
+
+```tsx
+import DanceDualText from "@/components/animatios/DanceDualText";
+
+<DanceDualText
+  text={['Animating', 'Text']}
+  speed={0.7}
+  direction="top"
+  className="text-red-400"
+/>
+```
+
+- **Props**:
+  - `text` (required): Array of strings.
+  - `speed` (optional): Animation speed (default: `0.7`).
+  - `direction` (optional): Choose between `'top'` or `'bottom'`.
+
+### 3. **DanceText**
+
+A dance-like animation where letters come in from the top or bottom.
+
+#### Usage
+
+```bash
+npx animatio add DanceText
+```
+
+#### Example
+
+```tsx
+import DanceText from "@/components/animatios/DanceText";
+
+<DanceText
+  text={['Creative', 'Animations']}
+  speed={0.4}
+  direction="bottom"
+  className="text-green-500"
+/>
+```
+
+- **Props**:
+  - `text` (required): Array of strings.
+  - `speed` (optional): Animation speed (default: `0.4`).
+  - `direction` (optional): `'top'` or `'bottom'`.
+
+### 4. **FlowingText**
+
+Creates a smooth flow-in animation for each letter.
+
+#### Usage
+
+```bash
+npx animatio add FlowingText
+```
+
+#### Example
+
+```tsx
+import FlowingText from "@/components/animatios/FlowingText";
+
+<FlowingText
+  text={['Smooth', 'Flow']}
+  speed={0.7}
+  className="text-purple-600"
+/>
+```
+
+- **Props**:
+  - `text` (required): Array of strings.
+  - `speed` (optional): Animation speed (default: `0.7`).
+  - `className` (optional): Custom styles.
+
+### 5. **GlideText**
+
+Letters glide in from the selected direction: top, bottom, left, right, vertical, or horizontal.
+
+#### Usage
+
+```bash
+npx animatio add GlideText
+```
+
+#### Example
+
+```tsx
+import GlideText from "@/components/animatios/GlideText";
+
+<GlideText
+  text={['Gliding', 'Effect']}
+  speed={1}
+  direction="right"
+  className="text-blue-800"
+/>
+```
+
+- **Props**:
+  - `text` (required): Array of strings.
+  - `speed` (optional): Animation speed (default: `1`).
+  - `direction` (optional): `'top'`, `'bottom'`, `'left'`, `'right'`, `'horizontal'`, `'vertical'`.
+
+### 6. **LetterPopText**
+
+Each letter pops in with scaling and fading effects.
+
+#### Usage
+
+```bash
+npx animatio add LetterPopText
+```
+
+#### Example
+
+```tsx
+import LetterPopText from "@/components/animatios/LetterPopText";
+
+<LetterPopText
+  text={['Pop', 'Effect']}
+  speed={1}
+  className="text-yellow-500"
+/>
+```
+
+- **Props**:
+  - `text` (required): Array of strings.
+  - `speed` (optional): Animation speed (default: `1`).
+  - `className` (optional): Custom CSS class names.
+
+### 7. **SurgeText**
+
+Creates a surge effect where letters rotate in and move from different angles.
+
+#### Usage
+
+```bash
+npx animatio add SurgeText
+```
+
+#### Example
+
+```tsx
+import SurgeText from "@/components/animatios/SurgeText";
+
+<SurgeText
+  text={['Surge', 'In']}
+  speed={0.8}
+  className="text-indigo-600"
+/>
+```
+
+- **Props**:
+  - `text` (required): Array of strings.
+  - `speed` (optional): Animation speed (default: `0.8`).
+  - `className` (optional): Custom CSS styles.
+
+### 8. **SwapText**
+
+A text swapping effect where letters animate by sliding in.
+
+#### Usage
+
+```bash
+npx animatio add SwapText
+```
+
+#### Example
+
+```tsx
+import SwapText from "@/components/animatios/SwapText";
+
+<SwapText
+  text={['Swap', 'Text']}
+  speed={1}
+  className="text-pink-600"
+/>
+```
+
+- **Props**:
+  - `text` (required): Array of strings.
+  - `speed` (optional): Animation speed (default: `1`).
+  - `className` (optional): Custom CSS classes.
+
+### 9. **SwingText**
+
+Creates a swinging animation for each letter.
+
+#### Usage
+
+```bash
+npx animatio add SwingText
+```
+
+#### Example
+
+```tsx
+import SwingText from "@/components/animatios/SwingText";
+
+<SwingText
+  text={['Swing', 'Text']}
+  speed={1}
+  className="text-teal-400"
+/>
+```
+
+- **Props**:
+  - `text` (required): Array of strings.
+  - `speed` (optional): Animation speed (default: `1`).
+  - `className` (optional): Custom styles.
+
+### 10. **TwinkleText**
+
+Letters twinkle in with a rotating or sliding effect.
+
+#### Usage
+
+```bash
+npx animatio add TwinkleText
+```
+
+#### Example
+
+```tsx
+import TwinkleText from "@/components/animatios/TwinkleText";
+
+<TwinkleText
+  text={['Twinkle', 'Effect']}
+  speed={0.4}
+  direction="left"
+  className="text-orange-500"
+/>
+```
+
+- **Props**:
+  - `text` (required): Array of strings.
+  - `speed` (optional): Animation speed (default: `0.4`).
+  - `direction` (optional): `'left'` or `'right'`.
+  - `className` (optional): Custom styles.
+
+### 11. **WordPopText**
+
+Pops in each word with a scaling effect.
+
+#### Usage
+
+```bash
+npx animatio add WordPopText
+```
+
+#### Example
+
+```tsx
+import WordPopText from "@/components/animatios/WordPopText";
+
+<WordPopText
+  text={['Popping', 'Words']}
+  speed={1}
+  className="text-gray-600"
+/>
+```
+
+- **Props**:
+  - `text` (required): Array of strings.
+  - `speed` (optional): Animation speed (default: `1`).
+  - `className` (optional): Custom styles.
 
 ## Customization
 
-You can use the `className` prop to pass in custom styles to both `SequentialText` and `AnimatedText`. These styles are applied to each letter within the animation. This allows you to fully control the appearance, including font size, color, background color, padding, and more.
-
-For example:
-
-```tsx
-<AnimatedText
-  text={['Customizable', 'Text','Ali Hamza']}
-  speed={0.6}
-  className="text-green-500 bg-gray-200 p-4 rounded-lg" // Custom styles
-/>
-```
+Each component accepts the `className` prop to allow for custom styling. This makes it easy to integrate Animatio into any design system.
 
 ## License
 
@@ -109,6 +340,6 @@ This package is licensed under the MIT License. Feel free to use and modify it i
 
 ---
 
-Enjoy creating amazing animations with `animatio`!
+Enjoy creating stunning animations with **Animatio**! 
 
-- **Connect on linkedin**: https://www.linkedin.com/in/ahkamboh/
+- **Connect on LinkedIn**: https://www.linkedin.com/in/ahkamboh/

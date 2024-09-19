@@ -1,17 +1,15 @@
 // @animatio: https://github.com/ahkamboh/animatio
-
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 import anime from "animejs";
 
-interface AnimatedTextProps {
+interface SwingTextProps {
   text: string[];
   speed?: number;
   className?: string;
 }
-
-const AnimatedText: React.FC<AnimatedTextProps> = ({ text, speed = 0.8, className = '' }) => {
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+const SwingText: React.FC<SwingTextProps> = ({ text, speed = 1, className = '' }) => {
+  const [currentWordIndex, setCurrentIndex] = useState(0);
   const textRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -19,42 +17,46 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, speed = 0.8, classNam
       if (textRef.current) {
         textRef.current.innerHTML = text[currentWordIndex].replace(
           /\S/g,
-          `<span class='inline-block ${className}'>$&</span>`
+          `<span class='inline-block'>$&</span>`
         );
         anime.timeline({ loop: false })
           .add({
-            targets: `.animated-text .inline-block`,
-            scale: [4, 1],
-            opacity: [0, 1],
+            targets: `.animated-text-3 .inline-block`,
+            translateY: ["1.1em", 0],
+            translateX: [0,"0.55em"],
             translateZ: 0,
-            easing: "easeOutExpo",
+            rotateZ: [180, 0],
             duration: 950 / speed,
             delay: (el: any, i: number) => (70 / speed) * i
           })
           .add({
-            targets: `.animated-text .inline-block`,
+            targets: `.animated-text-3 .inline-block`,
             opacity: 0,
-            duration: 1000 / speed,
+            duration: 1000,
             easing: "easeOutExpo",
-            delay: 1000 / speed,
-            complete: () => {
-              setCurrentWordIndex((prevIndex) => (prevIndex + 1) % text.length);
-            }
+            delay: 1000
+      
           });
+          
       }
     };
 
     animateText();
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % text.length);
+    }, 2750/speed);
+
+    return () => clearInterval(interval);
   }, [currentWordIndex, text, speed, className]);
 
   return (
-    <h1 className={`font-black text-5xl`}>
-      <span ref={textRef} className="animated-text"></span>
+    <h1 className={`font-black text-5xl ${className} overflow-hidden `}>
+      <span ref={textRef} className="animated-text-3 relative right-5 "></span>
     </h1>
   );
 };
 
-export default AnimatedText;
+export default SwingText;
 
 /*creator:@ahkamboh(Ali Hamza Kamboh)
 Site : https://alihamzakamboh.com
