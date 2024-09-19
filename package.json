@@ -1,6 +1,6 @@
 {
   "name": "animatio",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A React component package for creating text effects. Customize your text animation effortlessly with customizable classNames for styling.",
   "main": "dist/cli.js",
   "types": "dist/cli.d.ts",

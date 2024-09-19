@@ -5,7 +5,7 @@ import { program } from 'commander';
 
 // Define the CLI tool version and description
 program
-  .version('1.1.1')
+  .version('1.1.2')
   .description('Animatio: A React component package for creating dynamic text effects');
 
 // Command to initialize the animations folder
@@ -40,7 +40,8 @@ const availableAnimations = [
   'SwapText',
   'SwingText',
   'TwinkleText',
-  'WordPopText'
+  'WordPopText',
+  'SlitText'
 ];
 
 // Command to add a new animation component

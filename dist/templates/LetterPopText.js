@@ -30,47 +30,43 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(require("react"));
 const animejs_1 = __importDefault(require("animejs"));
-const LetterPopText = ({ text, className = '', speed = 1 }) => {
+const LetterPopText = ({ text, speed = 0.8, className = '' }) => {
+    const [currentWordIndex, setCurrentIndex] = (0, react_1.useState)(0);
     const textRef = (0, react_1.useRef)(null);
     (0, react_1.useEffect)(() => {
-        const animationConfig = {
-            opacityIn: [0, 1],
-            scaleIn: [0.2, 1],
-            scaleOut: 3,
-            durationIn: 800 / speed,
-            durationOut: 600 / speed,
-            delay: 500
+        const animateText = () => {
+            if (textRef.current) {
+                textRef.current.innerHTML = text[currentWordIndex].replace(/\S/g, `<span class='inline-block'>$&</span>`);
+                animejs_1.default.timeline({ loop: false })
+                    .add({
+                    targets: `.animated-text-20 .inline-block`,
+                    opacity: [0, 1],
+                    scale: [0.2, 1],
+                    duration: 800 / speed,
+                })
+                    .add({
+                    targets: `.animated-text-20 .inline-block`,
+                    opacity: 0,
+                    scale: 3,
+                    easing: "easeInExpo",
+                    duration: 600 / speed,
+                    delay: 500 / speed
+                });
+            }
         };
-        const timeline = animejs_1.default.timeline({ loop: true });
-        text.forEach((word, index) => {
-            const letterClass = `letters-${index + 1}`;
-            timeline
-                .add({
-                targets: `.${letterClass} .letter`,
-                opacity: animationConfig.opacityIn,
-                scale: animationConfig.scaleIn,
-                duration: animationConfig.durationIn
-            })
-                .add({
-                targets: `.${letterClass} .letter`,
-                opacity: 0,
-                scale: animationConfig.scaleOut,
-                duration: animationConfig.durationOut,
-                easing: "easeInExpo",
-                delay: animationConfig.delay
-            });
-        });
-        return () => {
-            timeline.pause();
-        };
-    }, [text]);
-    return (react_1.default.createElement("h1", { className: `font-black text-5xl ${className} relative` },
-        react_1.default.createElement("div", { ref: textRef, className: "ml4 relative" }, text.map((word, index) => (react_1.default.createElement("span", { key: index, className: `letters-${index + 1} absolute left-0 top-0 w-full` }, word.split(/(\s+)/).map((part, partIndex) => (part.match(/\s+/) ? (react_1.default.createElement("span", { key: partIndex, className: "inline-block" }, "\u00A0")) : (part.split('').map((letter, letterIndex) => (react_1.default.createElement("span", { key: `${partIndex}-${letterIndex}`, className: "letter inline-block" }, letter))))))))))));
+        animateText();
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % text.length);
+        }, 2050 / speed);
+        return () => clearInterval(interval);
+    }, [currentWordIndex, text, speed, className]);
+    return (react_1.default.createElement("h1", { className: `font-black text-4xl ${className}  pb-1` },
+        react_1.default.createElement("span", { ref: textRef, className: "animated-text-20" })));
 };
 exports.default = LetterPopText;
 /*creator:@ahkamboh(Ali Hamza Kamboh)
 Site : https://alihamzakamboh.com
 Twitter: https://twitter.com/alihamzakambohh
 GitHub: https://github.com/ahkamboh
-LinkedIn: https://www.linkedin.com/in/ahkamboh/*/
+LinkedIn: https://www.linkedin.com/in/ahkamboh/*/ 
 //# sourceMappingURL=LetterPopText.js.map

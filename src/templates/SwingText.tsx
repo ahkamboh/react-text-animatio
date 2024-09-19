@@ -50,7 +50,7 @@ const SwingText: React.FC<SwingTextProps> = ({ text, speed = 1, className = '' }
   }, [currentWordIndex, text, speed, className]);
 
   return (
-    <h1 className={`font-black text-5xl ${className} overflow-hidden `}>
+    <h1 className={`font-black  text-4xl   ${className} overflow-hidden px-2 pb-1`}>
       <span ref={textRef} className="animated-text-3 relative right-5 "></span>
     </h1>
   );

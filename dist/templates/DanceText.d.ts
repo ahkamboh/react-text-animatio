@@ -1,9 +1,9 @@
 import React from "react";
-interface DanceTextProps {
+interface DripTextProps {
     text: string[];
     speed?: number;
     direction?: "top" | "bottom";
     className?: string;
 }
-declare const DanceText: React.FC<DanceTextProps>;
-export default DanceText;
+declare const DripText: React.FC<DripTextProps>;
+export default DripText;

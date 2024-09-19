@@ -49,7 +49,7 @@ const CaptureText: React.FC<CaptureTextProps> = ({ text, speed = 0.7, className 
   }, [currentWordIndex, text, speed, className]);
 
   return (
-    <h1 className={`font-black text-5xl ${className}`}>
+    <h1 className={`font-black text-4xl ${className}`}>
       <span ref={textRef} className="animated-text"></span>
     </h1>
   );

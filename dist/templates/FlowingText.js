@@ -30,9 +30,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(require("react"));
 const animejs_1 = __importDefault(require("animejs"));
-const FlowingText = ({ text, className = '', speed = 0.7 }) => {
+const FlowingText = ({ text, className = '', speed = 0.8 }) => {
     const [currentIndex, setCurrentIndex] = (0, react_1.useState)(0);
-    const textRef = (0, react_1.useRef)(null);
+    const textRefs = (0, react_1.useRef)(null);
     (0, react_1.useEffect)(() => {
         const animationConfig = {
             opacityIn: [0, 1],
@@ -43,11 +43,11 @@ const FlowingText = ({ text, className = '', speed = 0.7 }) => {
             delay: 500 / speed
         };
         const animateText = () => {
-            if (textRef.current) {
+            if (textRefs.current) {
                 const timeline = animejs_1.default.timeline({ loop: false });
                 timeline
                     .add({
-                    targets: textRef.current.children,
+                    targets: textRefs.current.children,
                     opacity: animationConfig.opacityIn,
                     scale: animationConfig.scaleIn,
                     duration: animationConfig.durationIn,
@@ -55,22 +55,23 @@ const FlowingText = ({ text, className = '', speed = 0.7 }) => {
                     delay: animejs_1.default.stagger(100 / speed)
                 })
                     .add({
-                    targets: textRef.current.children,
+                    targets: textRefs.current.children,
                     opacity: 0,
                     scale: animationConfig.scaleOut,
                     duration: animationConfig.durationOut,
                     easing: "easeInExpo",
                     delay: animationConfig.delay
-                })
-                    .finished.then(() => {
-                    setCurrentIndex((prevIndex) => (prevIndex + 1) % text.length);
                 });
             }
         };
         animateText();
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % text.length);
+        }, 2500 / speed);
+        return () => clearInterval(interval);
     }, [currentIndex, text, speed]);
-    return (react_1.default.createElement("h1", { className: `font-black text-5xl ${className}` },
-        react_1.default.createElement("span", { ref: textRef, className: "inline-block space-x-2" }, text[currentIndex].split('').map((char, index) => (react_1.default.createElement("span", { key: index, className: "inline-block " }, char))))));
+    return (react_1.default.createElement("h1", { className: `font-black text-4xl  ${className}` },
+        react_1.default.createElement("span", { ref: textRefs, className: "inline-block " }, text[currentIndex].split('').map((char, index) => (react_1.default.createElement("span", { key: index, className: "inline-block " }, char))))));
 };
 exports.default = FlowingText;
 /*creator:@ahkamboh(Ali Hamza Kamboh)

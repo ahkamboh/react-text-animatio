@@ -89,7 +89,7 @@ const GlideText = ({ text, speed = 1, direction = "vertical", className = '' }) 
         }, 2000 / speed);
         return () => clearInterval(interval);
     }, [currentIndex, text, speed, direction]);
-    return (react_1.default.createElement("h1", { className: `font-black relative overflow-hidden` },
+    return (react_1.default.createElement("h1", { className: `font-black  text-4xl  relative overflow-hidden` },
         react_1.default.createElement("span", { ref: textRef, className: `inline-block ${className}` }, text[currentIndex])));
 };
 exports.default = GlideText;
