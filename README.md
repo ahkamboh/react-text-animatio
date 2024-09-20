@@ -298,9 +298,37 @@ import GlideText from "@/components/animatios/GlideText";
   - `direction` (optional): `'top'`, `'bottom'`, `'left'`, `'right'`, `'horizontal'`, `'vertical'`.
 
 ###  Using Cdn
-    
-```html
   
+```html
+   <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glide Text Animation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1  class="GlideText"></h1>
+
+    <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/glide_text.js"></script>
+    <script>
+      const animatio = new GlideText(["Glide", "Animation"], 1, "top");
+    </script>
+  </body>
+</html>
+
 ```
 
 ### 6. **LetterPopText**
@@ -330,6 +358,40 @@ import LetterPopText from "@/components/animatios/LetterPopText";
   - `speed` (optional): Animation speed (default: `1`).
   - `className` (optional): Custom CSS class names.
 
+###  Using Cdn
+  
+```html
+   <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letter Pop Text Animation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1  class="LetterPopText"></h1>
+
+    <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/letterpoptext.js"></script>
+    <script>
+       const animatio = new LetterPopText(["Letter Pop", "Animation"], 0.8);
+    </script>
+  </body>
+</html>
+
+```
+
 ### 7. **SurgeText**
 
 Creates a surge effect where letters rotate in and move from different angles.
@@ -357,6 +419,40 @@ import SurgeText from "@/components/animatios/SurgeText";
   - `speed` (optional): Animation speed (default: `0.8`).
   - `className` (optional): Custom CSS styles.
 
+###  Using Cdn
+  
+```html
+   <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surge Text Animation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+
+      }
+    </style>
+  </head>
+  <body>
+
+     <h1  class="SurgeText"></h1>
+
+    <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/surgetext.js"></script>
+    <script>
+    const animatio = new SurgeText(["Surge", "Animation"], 0.8)
+    </script>
+  </body>
+</html>
+
+```
+
 ### 8. **SwapText**
 
 A text swapping effect where letters animate by sliding in.
@@ -383,6 +479,12 @@ import SwapText from "@/components/animatios/SwapText";
   - `text` (required): Array of strings.
   - `speed` (optional): Animation speed (default: `1`).
   - `className` (optional): Custom CSS classes.
+
+###  Using Cdn
+  
+```html
+  
+```
 
 ### 9. **SwingText**
 
