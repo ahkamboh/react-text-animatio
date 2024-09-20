@@ -1,9 +1,11 @@
-class WordPopText {
-    constructor(textArray, speed = 0.8) {
+/*@animatio: https://github.com/ahkamboh/animatio
+  creator:@ahkamboh(https://alihamzakamboh.com)*/
+class SwingText {
+    constructor(textArray, speed = 1) {
       this.textArray = textArray;
       this.speed = speed;
       this.currentWordIndex = 0;
-      this.textElements = document.querySelectorAll('.WordPopText');
+      this.textElements = document.querySelectorAll('.SwingText');
       this.loadAnimeJS().then(() => this.startTextAnimation());
     }
   
@@ -23,22 +25,27 @@ class WordPopText {
   
     animateText(element) {
       if (element) {
-        element.innerHTML = this.textArray[this.currentWordIndex].split(' ').map(word => `<span style='display: inline-block;'>${word}</span>`).join(' ');
+        element.innerHTML = this.textArray[this.currentWordIndex].replace(
+          /\S/g,
+          "<span style='display: inline-block;' class='letter3'>$&</span>"
+        );
   
         anime.timeline({ loop: false })
           .add({
-            targets: '.letter20',
-            opacity: [0, 1],
-            scale: [0.2, 1],
-            duration: 800 / this.speed,
+            targets: '.letter3',
+            translateY: ["1.1em", 0],
+            translateX: [0, "0.55em"],
+            translateZ: 0,
+            rotateZ: [180, 0],
+            duration: 950 / this.speed,
+            delay: (el, i) => (70 / this.speed) * i
           })
           .add({
-            targets: '.letter20',
+            targets: '.letter3',
             opacity: 0,
-            scale: 3,
-            easing: "easeInExpo",
-            duration: 600 / this.speed,
-            delay: 500 / this.speed
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
           });
   
         this.currentWordIndex = (this.currentWordIndex + 1) % this.textArray.length;
@@ -49,10 +56,10 @@ class WordPopText {
       this.textElements.forEach(element => this.animateText(element));
       setInterval(() => {
         this.textElements.forEach(element => this.animateText(element));
-      }, 2050 / this.speed);
+      }, 2750 / this.speed);
     }
   }
   
   // Usage example:
-  // const animatio = new WordPopText(["Capture", "Animation"], 0.8);
+  // const animatio = new SwingText(["Capture", "Animation"], 1);
   
