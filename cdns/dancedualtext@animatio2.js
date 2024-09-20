@@ -5,7 +5,21 @@ class DanceDualText {
       this.direction = direction;
       this.currentIndex = 0;
       this.textElements = document.querySelectorAll('.DanceDualText');
-      this.startTextAnimation();
+      this.loadAnimeJS().then(() => this.startTextAnimation());
+    }
+  
+    loadAnimeJS() {
+      return new Promise((resolve, reject) => {
+        if (typeof anime !== 'undefined') {
+          resolve();
+        } else {
+          const script = document.createElement('script');
+          script.src = 'https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js';
+          script.onload = resolve;
+          script.onerror = reject;
+          document.head.appendChild(script);
+        }
+      });
     }
   
     animateText(element) {
@@ -58,4 +72,5 @@ class DanceDualText {
       }, 3000 / this.speed);
     }
   }
+  
   
