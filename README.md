@@ -483,7 +483,35 @@ import SwapText from "@/components/animatios/SwapText";
 ###  Using Cdn
   
 ```html
-  
+   <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swap Text Animation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+
+      }
+    </style>
+  </head>
+  <body>
+
+     <h1  class="SwapText"></h1>
+
+    <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/swap_text.js"></script>
+    <script>
+       const animatio = new SwapText(["Swap", "Animation"], 1);
+    </script>
+  </body>
+</html>
+
 ```
 
 ### 9. **SwingText**
@@ -512,6 +540,40 @@ import SwingText from "@/components/animatios/SwingText";
   - `text` (required): Array of strings.
   - `speed` (optional): Animation speed (default: `1`).
   - `className` (optional): Custom styles.
+
+###  Using Cdn
+  
+```html
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swing Text Animation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+
+      }
+    </style>
+  </head>
+  <body>
+
+     <h1  class="SwingText"></h1>
+
+    <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/swingtext.js"></script>
+    <script>
+       const animatio = new SwingText(["Swap", "Animation"], 1);
+    </script>
+  </body>
+</html>
+
+```
 
 ### 10. **TwinkleText**
 
@@ -542,6 +604,40 @@ import TwinkleText from "@/components/animatios/TwinkleText";
   - `direction` (optional): `'left'` or `'right'`.
   - `className` (optional): Custom styles.
 
+###  Using Cdn
+  
+```html
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twinkle Text Animation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+
+      }
+    </style>
+  </head>
+  <body>
+
+     <h1  class="TwinkleText"></h1>
+
+    <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/twinkletext.js"></script>
+    <script>
+        const animatio = new TwinkleText(["Twinkle", "Animation"], 0.4, "left")
+    </script>
+  </body>
+</html>
+
+```
+
 ### 11. **WordPopText**
 
 Pops in each word with a scaling effect.
@@ -568,6 +664,12 @@ import WordPopText from "@/components/animatios/WordPopText";
   - `text` (required): Array of strings.
   - `speed` (optional): Animation speed (default: `1`).
   - `className` (optional): Custom styles.
+
+###  Using Cdn
+  
+```html
+ 
+```
 
 ### 12. **SlitText**
 
