@@ -1,6 +1,6 @@
 # Animatio
 
-A React component package for creating dynamic text effects. Effortlessly customize your text animations with configurable classNames for styling and control.
+A React and Next js component package for creating dynamic text effects. Effortlessly customize your text animations with configurable classNames for styling and control.
 
 ## Installation
 
@@ -9,7 +9,7 @@ To install the package in your Next.js or React project, follow these steps:
 ### 1. Install the package
 
 ```bash
-npm i animatio@latest
+ npm i react-text-animatio@latest
 ```
 
 ### 2. Initialize the package
