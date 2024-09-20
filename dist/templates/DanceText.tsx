@@ -3,13 +3,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import anime from "animejs";
 
-interface DripTextProps {
+interface DanceTextProps {
   text: string[];
   speed?: number;
   direction?: "top" | "bottom";
   className?: string;
 }
-const DripText: React.FC<DripTextProps> = ({ text, speed = 0.5, direction = "none", className = "" }) => {
+const DanceText: React.FC<DanceTextProps> = ({ text, speed = 0.5, direction = "none", className = "" }) => {
   const textWrapperRef = useRef<HTMLSpanElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -66,7 +66,7 @@ const DripText: React.FC<DripTextProps> = ({ text, speed = 0.5, direction = "non
   );
 };
 
-export default DripText;
+export default DanceText;
 /*creator:@ahkamboh(Ali Hamza Kamboh)
 Site : https://alihamzakamboh.com
 Twitter: https://twitter.com/alihamzakambohh
