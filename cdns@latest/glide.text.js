@@ -26,8 +26,9 @@ class GlideText {
 
   animateText(element) {
     if (element) {
+      element.textContent = this.textArray[this.currentIndex];
+      
       let translateIn, translateOut;
-
       switch (this.direction) {
         case "top":
           translateIn = [20, 0];
@@ -85,3 +86,6 @@ class GlideText {
     }, 2000 / this.speed);
   }
 }
+
+// Usage example:
+// const glideText = new GlideText(["Hello", "World", "Glide"], 1, "vertical");
