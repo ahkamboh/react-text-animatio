@@ -30,7 +30,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(require("react"));
 const animejs_1 = __importDefault(require("animejs"));
-const DripText = ({ text, speed = 0.5, direction = "none", className = "" }) => {
+const DanceText = ({ text, speed = 0.5, direction = "none", className = "" }) => {
     const textWrapperRef = (0, react_1.useRef)(null);
     const [currentIndex, setCurrentIndex] = (0, react_1.useState)(0);
     (0, react_1.useEffect)(() => {
@@ -74,7 +74,7 @@ const DripText = ({ text, speed = 0.5, direction = "none", className = "" }) => 
         react_1.default.createElement("span", { className: "relative inline-block pr-0.5 py-4 overflow-hidden", ref: textWrapperRef },
             react_1.default.createElement("span", { className: "letters" }, text[currentIndex]))));
 };
-exports.default = DripText;
+exports.default = DanceText;
 /*creator:@ahkamboh(Ali Hamza Kamboh)
 Site : https://alihamzakamboh.com
 Twitter: https://twitter.com/alihamzakambohh

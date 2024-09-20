@@ -9,7 +9,7 @@ const path_1 = __importDefault(require("path"));
 const commander_1 = require("commander");
 // Define the CLI tool version and description
 commander_1.program
-    .version('1.1.2')
+    .version('1.1.3')
     .description('Animatio: A React component package for creating dynamic text effects');
 // Command to initialize the animations folder
 commander_1.program

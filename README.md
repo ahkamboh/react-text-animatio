@@ -43,11 +43,7 @@ npx animatio add CaptureText
 ```tsx
 import CaptureText from "@/components/animatios/CaptureText";
 
-<CaptureText
-  text={['Hello', 'World']}
-  speed={0.7}
-  className="text-blue-500"
-/>
+<CaptureText text={["Hello", "World"]} speed={0.7} className="text-blue-500" />;
 ```
 
 - **Props**:
@@ -55,8 +51,8 @@ import CaptureText from "@/components/animatios/CaptureText";
   - `speed` (optional): Animation speed (default: `0.7`).
   - `className` (optional): Custom CSS class names.
 
-###  Using Cdn
-    
+### Using Cdn
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -76,12 +72,11 @@ import CaptureText from "@/components/animatios/CaptureText";
     </style>
   </head>
   <body>
-
     <h1 class="CaptureText"></h1>
 
     <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/capturetext.js"></script>
     <script>
-       const animatio = new CaptureText(["Capture", "Animation"], 0.7);
+      const animatio = new CaptureText(["Capture", "Animation"], 0.7);
     </script>
   </body>
 </html>
@@ -103,11 +98,11 @@ npx animatio add DanceDualText
 import DanceDualText from "@/components/animatios/DanceDualText";
 
 <DanceDualText
-  text={['Animating', 'Text']}
+  text={["Animating", "Text"]}
   speed={0.7}
   direction="top"
   className="text-red-400"
-/>
+/>;
 ```
 
 - **Props**:
@@ -115,10 +110,10 @@ import DanceDualText from "@/components/animatios/DanceDualText";
   - `speed` (optional): Animation speed (default: `0.7`).
   - `direction` (optional): Choose between `'top'` or `'bottom'`.
 
-###  Using Cdn
-    
+### Using Cdn
+
 ```html
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -136,16 +131,18 @@ import DanceDualText from "@/components/animatios/DanceDualText";
     </style>
   </head>
   <body>
-
     <h1 class="DanceDualText"></h1>
 
     <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/dancedualtext.js"></script>
     <script>
-      const animatio = new DanceDualText(["Dance Dual", "Animation"], 0.7, "top");
+      const animatio = new DanceDualText(
+        ["Dance Dual", "Animation"],
+        0.7,
+        "top"
+      );
     </script>
   </body>
 </html>
-
 ```
 
 ### 3. **DanceText**
@@ -164,11 +161,11 @@ npx animatio add DanceText
 import DanceText from "@/components/animatios/DanceText";
 
 <DanceText
-  text={['Creative', 'Animations']}
+  text={["Creative", "Animations"]}
   speed={0.5}
   direction="bottom"
   className="text-green-500"
-/>
+/>;
 ```
 
 - **Props**:
@@ -176,10 +173,10 @@ import DanceText from "@/components/animatios/DanceText";
   - `speed` (optional): Animation speed (default: `0.5`).
   - `direction` (optional): `'top'` or `'bottom'`.
 
-###  Using Cdn
-    
+### Using Cdn
+
 ```html
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -197,16 +194,18 @@ import DanceText from "@/components/animatios/DanceText";
     </style>
   </head>
   <body>
-
     <h1 class="DanceText"></h1>
 
     <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/dancetext.js"></script>
     <script>
-      const animatio = new DanceText(["Dance Text", "Animation"], 0.5, "bottom")
+      const animatio = new DanceText(
+        ["Dance Text", "Animation"],
+        0.5,
+        "bottom"
+      );
     </script>
   </body>
 </html>
-
 ```
 
 ### 4. **FlowingText**
@@ -225,10 +224,10 @@ npx animatio add FlowingText
 import FlowingText from "@/components/animatios/FlowingText";
 
 <FlowingText
-  text={['Smooth', 'Flow']}
+  text={["Smooth", "Flow"]}
   speed={0.7}
   className="text-purple-600"
-/>
+/>;
 ```
 
 - **Props**:
@@ -236,10 +235,10 @@ import FlowingText from "@/components/animatios/FlowingText";
   - `speed` (optional): Animation speed (default: `0.7`).
   - `className` (optional): Custom styles.
 
-###  Using Cdn
-    
+### Using Cdn
+
 ```html
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -257,16 +256,14 @@ import FlowingText from "@/components/animatios/FlowingText";
     </style>
   </head>
   <body>
-
     <h1 class="FlowingText"></h1>
 
     <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/flowingtext.js"></script>
     <script>
-       const animatio = new FlowingText(["Flowing Text", "Animation"], 0.8);
+      const animatio = new FlowingText(["Flowing Text", "Animation"], 0.8);
     </script>
   </body>
 </html>
-
 ```
 
 ### 5. **GlideText**
@@ -285,11 +282,11 @@ npx animatio add GlideText
 import GlideText from "@/components/animatios/GlideText";
 
 <GlideText
-  text={['Gliding', 'Effect']}
+  text={["Gliding", "Effect"]}
   speed={1}
   direction="right"
   className="text-blue-800"
-/>
+/>;
 ```
 
 - **Props**:
@@ -297,10 +294,10 @@ import GlideText from "@/components/animatios/GlideText";
   - `speed` (optional): Animation speed (default: `1`).
   - `direction` (optional): `'top'`, `'bottom'`, `'left'`, `'right'`, `'horizontal'`, `'vertical'`.
 
-###  Using Cdn
-  
+### Using Cdn
+
 ```html
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -314,13 +311,11 @@ import GlideText from "@/components/animatios/GlideText";
         align-items: center;
         height: 100vh;
         background-color: #f0f0f0;
-
       }
     </style>
   </head>
   <body>
-
-    <h1  class="GlideText"></h1>
+    <h1 class="GlideText"></h1>
 
     <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/glide_text.js"></script>
     <script>
@@ -328,7 +323,6 @@ import GlideText from "@/components/animatios/GlideText";
     </script>
   </body>
 </html>
-
 ```
 
 ### 6. **LetterPopText**
@@ -347,10 +341,10 @@ npx animatio add LetterPopText
 import LetterPopText from "@/components/animatios/LetterPopText";
 
 <LetterPopText
-  text={['Pop', 'Effect']}
+  text={["Pop", "Effect"]}
   speed={1}
   className="text-yellow-500"
-/>
+/>;
 ```
 
 - **Props**:
@@ -358,10 +352,10 @@ import LetterPopText from "@/components/animatios/LetterPopText";
   - `speed` (optional): Animation speed (default: `1`).
   - `className` (optional): Custom CSS class names.
 
-###  Using Cdn
-  
+### Using Cdn
+
 ```html
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -375,21 +369,18 @@ import LetterPopText from "@/components/animatios/LetterPopText";
         align-items: center;
         height: 100vh;
         background-color: #f0f0f0;
-
       }
     </style>
   </head>
   <body>
-
-    <h1  class="LetterPopText"></h1>
+    <h1 class="LetterPopText"></h1>
 
     <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/letterpoptext.js"></script>
     <script>
-       const animatio = new LetterPopText(["Letter Pop", "Animation"], 0.8);
+      const animatio = new LetterPopText(["Letter Pop", "Animation"], 0.8);
     </script>
   </body>
 </html>
-
 ```
 
 ### 7. **SurgeText**
@@ -407,11 +398,7 @@ npx animatio add SurgeText
 ```tsx
 import SurgeText from "@/components/animatios/SurgeText";
 
-<SurgeText
-  text={['Surge', 'In']}
-  speed={0.8}
-  className="text-indigo-600"
-/>
+<SurgeText text={["Surge", "In"]} speed={0.8} className="text-indigo-600" />;
 ```
 
 - **Props**:
@@ -419,10 +406,10 @@ import SurgeText from "@/components/animatios/SurgeText";
   - `speed` (optional): Animation speed (default: `0.8`).
   - `className` (optional): Custom CSS styles.
 
-###  Using Cdn
-  
+### Using Cdn
+
 ```html
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -436,21 +423,18 @@ import SurgeText from "@/components/animatios/SurgeText";
         align-items: center;
         height: 100vh;
         background-color: #f0f0f0;
-
       }
     </style>
   </head>
   <body>
-
-     <h1  class="SurgeText"></h1>
+    <h1 class="SurgeText"></h1>
 
     <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/surgetext.js"></script>
     <script>
-    const animatio = new SurgeText(["Surge", "Animation"], 0.8)
+      const animatio = new SurgeText(["Surge", "Animation"], 0.8);
     </script>
   </body>
 </html>
-
 ```
 
 ### 8. **SwapText**
@@ -468,11 +452,7 @@ npx animatio add SwapText
 ```tsx
 import SwapText from "@/components/animatios/SwapText";
 
-<SwapText
-  text={['Swap', 'Text']}
-  speed={1}
-  className="text-pink-600"
-/>
+<SwapText text={["Swap", "Text"]} speed={1} className="text-pink-600" />;
 ```
 
 - **Props**:
@@ -480,10 +460,10 @@ import SwapText from "@/components/animatios/SwapText";
   - `speed` (optional): Animation speed (default: `1`).
   - `className` (optional): Custom CSS classes.
 
-###  Using Cdn
-  
+### Using Cdn
+
 ```html
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -497,21 +477,18 @@ import SwapText from "@/components/animatios/SwapText";
         align-items: center;
         height: 100vh;
         background-color: #f0f0f0;
-
       }
     </style>
   </head>
   <body>
-
-     <h1  class="SwapText"></h1>
+    <h1 class="SwapText"></h1>
 
     <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/swap_text.js"></script>
     <script>
-       const animatio = new SwapText(["Swap", "Animation"], 1);
+      const animatio = new SwapText(["Swap", "Animation"], 1);
     </script>
   </body>
 </html>
-
 ```
 
 ### 9. **SwingText**
@@ -529,11 +506,7 @@ npx animatio add SwingText
 ```tsx
 import SwingText from "@/components/animatios/SwingText";
 
-<SwingText
-  text={['Swing', 'Text']}
-  speed={1}
-  className="text-teal-400"
-/>
+<SwingText text={["Swing", "Text"]} speed={1} className="text-teal-400" />;
 ```
 
 - **Props**:
@@ -541,10 +514,10 @@ import SwingText from "@/components/animatios/SwingText";
   - `speed` (optional): Animation speed (default: `1`).
   - `className` (optional): Custom styles.
 
-###  Using Cdn
-  
+### Using Cdn
+
 ```html
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -558,21 +531,18 @@ import SwingText from "@/components/animatios/SwingText";
         align-items: center;
         height: 100vh;
         background-color: #f0f0f0;
-
       }
     </style>
   </head>
   <body>
-
-     <h1  class="SwingText"></h1>
+    <h1 class="SwingText"></h1>
 
     <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/swingtext.js"></script>
     <script>
-       const animatio = new SwingText(["Swap", "Animation"], 1);
+      const animatio = new SwingText(["Swap", "Animation"], 1);
     </script>
   </body>
 </html>
-
 ```
 
 ### 10. **TwinkleText**
@@ -591,11 +561,11 @@ npx animatio add TwinkleText
 import TwinkleText from "@/components/animatios/TwinkleText";
 
 <TwinkleText
-  text={['Twinkle', 'Effect']}
+  text={["Twinkle", "Effect"]}
   speed={0.4}
   direction="left"
   className="text-orange-500"
-/>
+/>;
 ```
 
 - **Props**:
@@ -604,10 +574,10 @@ import TwinkleText from "@/components/animatios/TwinkleText";
   - `direction` (optional): `'left'` or `'right'`.
   - `className` (optional): Custom styles.
 
-###  Using Cdn
-  
+### Using Cdn
+
 ```html
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -621,21 +591,18 @@ import TwinkleText from "@/components/animatios/TwinkleText";
         align-items: center;
         height: 100vh;
         background-color: #f0f0f0;
-
       }
     </style>
   </head>
   <body>
-
-     <h1  class="TwinkleText"></h1>
+    <h1 class="TwinkleText"></h1>
 
     <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/twinkletext.js"></script>
     <script>
-        const animatio = new TwinkleText(["Twinkle", "Animation"], 0.4, "left")
+      const animatio = new TwinkleText(["Twinkle", "Animation"], 0.4, "left");
     </script>
   </body>
 </html>
-
 ```
 
 ### 11. **WordPopText**
@@ -653,11 +620,7 @@ npx animatio add WordPopText
 ```tsx
 import WordPopText from "@/components/animatios/WordPopText";
 
-<WordPopText
-  text={['Popping', 'Words']}
-  speed={1}
-  className="text-gray-600"
-/>
+<WordPopText text={["Popping", "Words"]} speed={1} className="text-gray-600" />;
 ```
 
 - **Props**:
@@ -665,10 +628,10 @@ import WordPopText from "@/components/animatios/WordPopText";
   - `speed` (optional): Animation speed (default: `1`).
   - `className` (optional): Custom styles.
 
-###  Using Cdn
-  
+### Using Cdn
+
 ```html
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -682,21 +645,18 @@ import WordPopText from "@/components/animatios/WordPopText";
         align-items: center;
         height: 100vh;
         background-color: #f0f0f0;
-
       }
     </style>
   </head>
   <body>
-
-     <h1  class="WordPopText"></h1>
+    <h1 class="WordPopText"></h1>
 
     <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/wordpop_text.js"></script>
     <script>
-    const animatio = new WordPopText(["Word Pop", "Animation"], 0.8);
+      const animatio = new WordPopText(["Word Pop", "Animation"], 0.8);
     </script>
   </body>
 </html>
-
 ```
 
 ### 12. **SlitText**
@@ -714,17 +674,44 @@ npx animatio add SlitText
 ```tsx
 import SlitText from "@/components/animatios/SlitText";
 
-<SlitText
-  text={['Slit', 'Words']}
-  speed={0.7}
-  className="text-gray-600"
-/>
+<SlitText text={["Slit", "Words"]} speed={0.7} className="text-gray-600" />;
 ```
 
 - **Props**:
   - `text` (required): Array of strings.
   - `speed` (optional): Animation speed (default: `0.7`).
   - `className` (optional): Custom styles.
+
+### Using Cdn
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slit Text Animation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="SlitText"></h1>
+
+    <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/slit_text.js"></script>
+    <script>
+      const animatio = new SlitText(["Slit Text", "Animation"], 0.7);
+    </script>
+  </body>
+</html>
+```
 
 ## Customization
 
@@ -736,6 +723,6 @@ This package is licensed under the MIT License. Feel free to use and modify it i
 
 ---
 
-Enjoy creating stunning animations with **Animatio**! 
+Enjoy creating stunning animations with **Animatio**!
 
 - **Connect on LinkedIn**: https://www.linkedin.com/in/ahkamboh/
