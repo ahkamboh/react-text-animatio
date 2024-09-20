@@ -55,6 +55,38 @@ import CaptureText from "@/components/animatios/CaptureText";
   - `speed` (optional): Animation speed (default: `0.7`).
   - `className` (optional): Custom CSS class names.
 
+###  Using Cdn
+    
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capture Text Animation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1 class="CaptureText"></h1>
+
+    <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/capturetext.js"></script>
+    <script>
+       const animatio = new CaptureText(["Capture", "Animation"], 0.7);
+    </script>
+  </body>
+</html>
+```
+
 ### 2. **DanceDualText**
 
 Creates a dance-like animation where letters move in from different directions.
@@ -82,6 +114,39 @@ import DanceDualText from "@/components/animatios/DanceDualText";
   - `text` (required): Array of strings.
   - `speed` (optional): Animation speed (default: `0.7`).
   - `direction` (optional): Choose between `'top'` or `'bottom'`.
+
+###  Using Cdn
+    
+```html
+   <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DanceDual Text Animation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1 class="DanceDualText"></h1>
+
+    <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/dancedualtext.js"></script>
+    <script>
+      const animatio = new DanceDualText(["Dance Dual", "Animation"], 0.7, "top");
+    </script>
+  </body>
+</html>
+
+```
 
 ### 3. **DanceText**
 
@@ -111,6 +176,39 @@ import DanceText from "@/components/animatios/DanceText";
   - `speed` (optional): Animation speed (default: `0.5`).
   - `direction` (optional): `'top'` or `'bottom'`.
 
+###  Using Cdn
+    
+```html
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dance Text Animation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1 class="DanceText"></h1>
+
+    <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/dancetext.js"></script>
+    <script>
+      const animatio = new DanceText(["Dance Text", "Animation"], 0.5, "bottom")
+    </script>
+  </body>
+</html>
+
+```
+
 ### 4. **FlowingText**
 
 Creates a smooth flow-in animation for each letter.
@@ -137,6 +235,39 @@ import FlowingText from "@/components/animatios/FlowingText";
   - `text` (required): Array of strings.
   - `speed` (optional): Animation speed (default: `0.7`).
   - `className` (optional): Custom styles.
+
+###  Using Cdn
+    
+```html
+   <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flowing Text Animation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1 class="FlowingText"></h1>
+
+    <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/flowingtext.js"></script>
+    <script>
+       const animatio = new FlowingText(["Flowing Text", "Animation"], 0.8);
+    </script>
+  </body>
+</html>
+
+```
 
 ### 5. **GlideText**
 
@@ -165,6 +296,12 @@ import GlideText from "@/components/animatios/GlideText";
   - `text` (required): Array of strings.
   - `speed` (optional): Animation speed (default: `1`).
   - `direction` (optional): `'top'`, `'bottom'`, `'left'`, `'right'`, `'horizontal'`, `'vertical'`.
+
+###  Using Cdn
+    
+```html
+  
+```
 
 ### 6. **LetterPopText**
 
