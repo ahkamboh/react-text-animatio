@@ -668,7 +668,35 @@ import WordPopText from "@/components/animatios/WordPopText";
 ###  Using Cdn
   
 ```html
- 
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Pop Text Animation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+
+      }
+    </style>
+  </head>
+  <body>
+
+     <h1  class="WordPopText"></h1>
+
+    <script src="https://cdn.jsdelivr.net/gh/ahkamboh/animatio@main/cdns%40latest/wordpop_text.js"></script>
+    <script>
+    const animatio = new WordPopText(["Word Pop", "Animation"], 0.8);
+    </script>
+  </body>
+</html>
+
 ```
 
 ### 12. **SlitText**
