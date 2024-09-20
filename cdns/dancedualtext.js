@@ -1,3 +1,5 @@
+/*@animatio: https://github.com/ahkamboh/animatio
+  creator:@ahkamboh(https://alihamzakamboh.com)*/
 class DanceDualText {
     constructor(textArray, speed = 0.7, direction = 'none') {
       this.textArray = textArray;
@@ -72,5 +74,5 @@ class DanceDualText {
       }, 3000 / this.speed);
     }
   }
-  
-  
+  // Usage example:
+// const animatio = new DanceDualText(["Capture", "Animation"], 0.7, 'top');

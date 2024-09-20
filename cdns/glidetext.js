@@ -1,4 +1,7 @@
-class GlideText {
+
+/*@animatio: https://github.com/ahkamboh/animatio
+  creator:@ahkamboh(https://alihamzakamboh.com)*/
+  class GlideText {
     constructor(textArray, speed = 1, direction = "vertical") {
       this.textArray = textArray;
       this.speed = speed;

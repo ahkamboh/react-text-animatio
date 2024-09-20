@@ -1,9 +1,11 @@
-class LetterPopText {
+/*@animatio: https://github.com/ahkamboh/animatio
+  creator:@ahkamboh(https://alihamzakamboh.com)*/
+class WordPopText {
     constructor(textArray, speed = 0.8) {
       this.textArray = textArray;
       this.speed = speed;
       this.currentWordIndex = 0;
-      this.textElements = document.querySelectorAll('.LetterPopText');
+      this.textElements = document.querySelectorAll('.WordPopText');
       this.loadAnimeJS().then(() => this.startTextAnimation());
     }
   
@@ -23,38 +25,35 @@ class LetterPopText {
   
     animateText(element) {
       if (element) {
-        element.innerHTML = this.textArray[this.currentWordIndex].replace(
-          /\S/g,
-          "<span style='display: inline-block;'>$&</span>"
-        );
+        element.innerHTML = this.textArray[this.currentWordIndex].split(' ').map(word => `<span style='display: inline-block;'>${word}</span>`).join(' ');
   
         anime.timeline({ loop: false })
           .add({
-            targets: `.${element.className} span`,
+            targets: '.letter20',
             opacity: [0, 1],
             scale: [0.2, 1],
             duration: 800 / this.speed,
           })
           .add({
-            targets: `.${element.className} span`,
+            targets: '.letter20',
             opacity: 0,
             scale: 3,
             easing: "easeInExpo",
             duration: 600 / this.speed,
-            delay: 500 / this.speed,
+            delay: 500 / this.speed
           });
+  
+        this.currentWordIndex = (this.currentWordIndex + 1) % this.textArray.length;
       }
     }
   
     startTextAnimation() {
       this.textElements.forEach(element => this.animateText(element));
       setInterval(() => {
-        this.currentWordIndex = (this.currentWordIndex + 1) % this.textArray.length;
         this.textElements.forEach(element => this.animateText(element));
       }, 2050 / this.speed);
     }
   }
-  
   // Usage example:
-  // const animatio = new LetterPopText(["Capture", "Animation"], 0.8);
+  // const animatio = new WordPopText(["Capture", "Animation"], 0.8);
   

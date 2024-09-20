@@ -1,3 +1,5 @@
+/*@animatio: https://github.com/ahkamboh/animatio
+  creator:@ahkamboh(https://alihamzakamboh.com)*/
 class SlitText {
     constructor(textArray, speed = 0.7) {
       this.textArray = textArray;

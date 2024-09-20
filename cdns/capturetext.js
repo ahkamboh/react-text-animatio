@@ -1,3 +1,5 @@
+/*@animatio: https://github.com/ahkamboh/animatio
+  creator:@ahkamboh(https://alihamzakamboh.com)*/
 class CaptureText {
   constructor(textArray, speed = 0.7) {
     this.textArray = textArray;
@@ -56,3 +58,5 @@ class CaptureText {
     }, 2750 / this.speed);
   }
 }
+// Usage example:
+// const animatio = new CaptureText(["Capture", "Animation"], 0.7);

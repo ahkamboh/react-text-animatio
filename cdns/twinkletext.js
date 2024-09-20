@@ -1,10 +1,12 @@
-class DanceText {
-    constructor(textArray, speed = 0.5, direction = "none") {
+/*@animatio: https://github.com/ahkamboh/animatio
+  creator:@ahkamboh(https://alihamzakamboh.com)*/
+class TwinkleText {
+    constructor(textArray, speed = 0.4, direction = "none") {
       this.textArray = textArray;
       this.speed = speed;
       this.direction = direction;
       this.currentIndex = 0;
-      this.textElements = document.querySelectorAll('.DanceText');
+      this.textElements = document.querySelectorAll('.TwinkleText');
       this.loadAnimeJS().then(() => this.startTextAnimation());
     }
   
@@ -26,30 +28,30 @@ class DanceText {
       if (element) {
         element.innerHTML = this.textArray[this.currentIndex].replace(
           /\S/g,
-          "<span style='display: inline-block;' class='letter230'>$&</span>"
+          "<span style='display: inline-block;' class='letter23'>$&</span>"
         );
   
         let animationProps;
         switch (this.direction) {
-          case "top":
-            animationProps = { translateY: [-90, 0] };
+          case "left":
+            animationProps = { translateX: [-90, 0] };
             break;
-          case "bottom":
-            animationProps = { translateY: [90, 0] };
+          case "right":
+            animationProps = { translateX: [90, 0] };
             break;
           default:
-            animationProps = { translateY: [90, 0] };
+            animationProps = { rotateY: [-90, 0] };
         }
   
         anime.timeline({ loop: false })
           .add({
-            targets: '.letter230',
+            targets: '.letter23',
             ...animationProps,
             duration: 950 / this.speed,
             delay: (el, i) => 50 * i
           })
           .add({
-            targets: '.ml440',
+            targets: '.ml44',
             duration: 2000,
             easing: "easeOutExpo",
             delay: (el, i) => 50 * i + 1000
@@ -68,5 +70,5 @@ class DanceText {
   }
   
   // Usage example:
-  // const animatio = new DanceText(["Capture", "Animation"], 0.5, "none");
+  // const animatio = new TwinkleText(["Capture", "Animation"], 0.4, "none");
   

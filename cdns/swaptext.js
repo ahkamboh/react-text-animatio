@@ -1,9 +1,11 @@
-class SurgeText {
-    constructor(textArray, speed = 0.8) {
+/*@animatio: https://github.com/ahkamboh/animatio
+  creator:@ahkamboh(https://alihamzakamboh.com)*/
+class SwapText {
+    constructor(textArray, speed = 1) {
       this.textArray = textArray;
       this.speed = speed;
-      this.currentWordIndex = 0;
-      this.textElements = document.querySelectorAll('.SurgeText');
+      this.currentTextIndex = 0;
+      this.textElements = document.querySelectorAll('.SwapText');
       this.loadAnimeJS().then(() => this.startTextAnimation());
     }
   
@@ -23,41 +25,41 @@ class SurgeText {
   
     animateText(element) {
       if (element) {
-        element.innerHTML = this.textArray[this.currentWordIndex].replace(
+        element.innerHTML = this.textArray[this.currentTextIndex].replace(
           /\S/g,
-          "<span style='display: inline-block;'>$&</span>"
+          "<span style='display: inline-block;' class='letter2'>$&</span>"
         );
   
         anime.timeline({ loop: false })
           .add({
-            targets: `.${element.className} span`,
+            targets: '.letter2',
             translateY: ["1.1em", 0],
-            translateX: ["0.55em", 0],
             translateZ: 0,
-            rotateZ: [180, 0],
+            opacity: [0, 1],
+            easing: 'easeInOutQuad',
             duration: 750 / this.speed,
-            easing: "easeOutExpo",
-            delay: (el, i) => (50 * i) / this.speed
+            delay: (el, i) => 50 * i
           })
           .add({
-            targets: `.${element.className} span`,
+            targets: '.letter2',
             opacity: 0,
-            duration: 1000,
-            easing: "easeOutExpo",
-            delay: 1000
+            duration: 1500 / this.speed,
+            easing: 'easeInOutQuad',
+            delay: (el, i) => 50 * i + 1000
           });
+  
+        this.currentTextIndex = (this.currentTextIndex + 1) % this.textArray.length;
       }
     }
   
     startTextAnimation() {
       this.textElements.forEach(element => this.animateText(element));
       setInterval(() => {
-        this.currentWordIndex = (this.currentWordIndex + 1) % this.textArray.length;
         this.textElements.forEach(element => this.animateText(element));
-      }, 2750 / this.speed);
+      }, 4000 / this.speed);
     }
   }
   
   // Usage example:
-  // const animatio = new SurgeText(["Capture", "Animation"], 0.8);
+  // const animatio = new SwapText(["Capture", "Animation"], 1);
   
