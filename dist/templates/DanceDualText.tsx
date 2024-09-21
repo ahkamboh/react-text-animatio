@@ -41,7 +41,7 @@ const DanceDualText: React.FC<DanceDualTextProps> = ({ text, className = '', spe
             translateY: [translateYStart, 0],
             translateZ: 0,
             duration: 1000,
-            delay: (_: any, i: number) => 50 * i,
+            delay: (_, i: number) => 50 * i,
             easing: 'easeOutExpo',
           })
           .add({
@@ -49,7 +49,7 @@ const DanceDualText: React.FC<DanceDualTextProps> = ({ text, className = '', spe
             opacity: 0,
             translateY: [0, translateYEnd],
             duration: 1000,
-            delay: (_: any, i: number) => 50 * i,
+            delay: (_, i: number) => 50 * i,
             easing: 'easeInExpo',
           }, '+=1000');
       }

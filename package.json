@@ -1,6 +1,6 @@
 {
   "name": "react-text-animatio",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A React js and Next js component package for creating text effects also support cdn for other Framer works. Customize your text animation effortlessly with customizable classNames for styling.",
   "main": "dist/cli.js",
   "types": "dist/cli.d.ts",

@@ -46,13 +46,13 @@ const SwapText = ({ text, speed = 1, className = '' }) => {
                     opacity: [0, 1],
                     easing: 'easeInOutQuad',
                     duration: 750 / speed,
-                    delay: (el, i) => 50 * i
+                    delay: (_, i) => 50 * i
                 }).add({
                     targets: '.letter2',
                     opacity: 0,
                     duration: 1500 / speed,
                     easing: 'easeInOutQuad',
-                    delay: (el, i) => 50 * i + 1000
+                    delay: (_, i) => 50 * i + 1000
                 });
                 currentTextIndex = (currentTextIndex + 1) % text.length;
             };

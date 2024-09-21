@@ -45,7 +45,7 @@ const CaptureText = ({ text, speed = 0.7, className = '' }) => {
                     translateZ: 0,
                     easing: "easeOutExpo",
                     duration: 950 / speed,
-                    delay: (el, i) => (70 / speed) * i
+                    delay: (_, i) => (70 / speed) * i
                 })
                     .add({
                     targets: `.animated-text .inline-block`,

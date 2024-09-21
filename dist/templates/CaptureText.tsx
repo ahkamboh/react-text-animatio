@@ -27,7 +27,7 @@ const CaptureText: React.FC<CaptureTextProps> = ({ text, speed = 0.7, className 
             translateZ: 0,
             easing: "easeOutExpo",
             duration: 950 / speed,
-            delay: (el: any, i: number) => (70 / speed) * i
+            delay: (_, i: number) => (70 / speed) * i
           })
           .add({
             targets: `.animated-text .inline-block`,

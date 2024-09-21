@@ -45,7 +45,7 @@ const SwingText = ({ text, speed = 1, className = '' }) => {
                     translateZ: 0,
                     rotateZ: [180, 0],
                     duration: 950 / speed,
-                    delay: (el, i) => (70 / speed) * i
+                    delay: (_, i) => (70 / speed) * i
                 })
                     .add({
                     targets: `.animated-text-3 .inline-block`,

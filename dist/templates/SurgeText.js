@@ -46,7 +46,7 @@ const SurgeText = ({ text, speed = 0.8, className = '' }) => {
                     rotateZ: [180, 0],
                     duration: 750 / speed,
                     easing: "easeOutExpo",
-                    delay: (el, i) => (50 * i) / speed
+                    delay: (_, i) => (50 * i) / speed
                 })
                     .add({
                     targets: `.animated-text-2 .inline-block`,

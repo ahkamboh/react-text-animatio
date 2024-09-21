@@ -38,12 +38,12 @@ const TwinkleText: React.FC<TwinkleTextProps> = ({ text, speed = 0.4, direction 
             targets: '.letter23',
             ...animationProps,
             duration: 950 / speed,
-            delay: (el: any, i: number) => 50 * i
+            delay: (_, i: number) => 50 * i
           }).add({
             targets: '.ml44',
             duration: 2000,
             easing: "easeOutExpo",
-            delay: (el: any, i: number) => 50 * i + 1000
+            delay: (_,i: number) => 50 * i + 1000
           });
       }
     };
