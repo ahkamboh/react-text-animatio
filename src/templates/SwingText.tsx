@@ -27,7 +27,7 @@ const SwingText: React.FC<SwingTextProps> = ({ text, speed = 1, className = '' }
             translateZ: 0,
             rotateZ: [180, 0],
             duration: 950 / speed,
-            delay: (el: any, i: number) => (70 / speed) * i
+            delay: (_, i: number) => (70 / speed) * i
           })
           .add({
             targets: `.animated-text-3 .inline-block`,

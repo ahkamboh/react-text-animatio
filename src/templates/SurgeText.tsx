@@ -28,7 +28,7 @@ const SurgeText: React.FC<SurgeTextProps> = ({ text, speed = 0.8, className = ''
             rotateZ: [180, 0],
             duration: 750 /speed,
             easing: "easeOutExpo",
-            delay: (el: any, i: number) => (50 * i)/speed
+            delay: (_, i: number) => (50 * i)/speed
           })
           .add({
             targets: `.animated-text-2 .inline-block`,
