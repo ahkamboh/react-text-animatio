@@ -1,6 +1,6 @@
 # Animatio
 
-A React and Next js component package for creating dynamic text effects. Effortlessly customize your text animations with configurable classNames for styling and control.
+A React and Next js component `npm package` with `npx cli` for creating dynamic text effects. Effortlessly customize your text animations with configurable classNames for styling and control.
 
 ## Installation
 
