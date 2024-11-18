@@ -1,6 +1,6 @@
-# Animatio
-
+# Animatio ![npm](https://img.shields.io/badge/npm-v1.0.1-red)
 A React and Next js component `npm package` with `npx cli` for creating dynamic text effects. Effortlessly customize your text animations with configurable classNames for styling and control.
+
 
 ## Installation
 
